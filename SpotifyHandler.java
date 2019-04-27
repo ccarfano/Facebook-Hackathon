@@ -1,4 +1,3 @@
-package moodplay;
 
 import java.net.*;
 import java.io.*;
@@ -6,10 +5,12 @@ import java.util.*;
 
 import javax.net.ssl.HttpsURLConnection;
 
+
 public class SpotifyHandler {
 	private long token_timeout = 0;
 	private String access_token = "";
 	private String token_type = "";
+	
 	
 	public void requestAccessToken() throws IOException {
 		//ArrayList <1>token <2>token_value <3>type <4>bearer
