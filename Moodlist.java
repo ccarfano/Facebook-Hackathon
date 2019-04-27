@@ -29,26 +29,5 @@ public class Moodlist{
     return convo.size();
 
   }
-  
-  public ArrayList<String> getHappy(){
-    return happy;
-  }
-
-  public ArrayList<String> getSad(){
-    return sad;
-  }
-
-  public ArrayList<String> getWow(){
-    return wow;
-  }
-
-  public ArrayList<String> getAngry(){
-    return angry;
-  }
-
-  public ArrayList<String> getLove(){
-    return love;
-  }
-  
 
 }
