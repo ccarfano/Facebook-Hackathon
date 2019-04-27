@@ -1,4 +1,11 @@
 
+import java.net.*;
+import java.io.*;
+import java.util.*;
+
+import javax.net.ssl.HttpsURLConnection;
+
+
 public class SpotifyHandler {
 	private long token_timeout = 0;
 	private String access_token = "";
@@ -32,7 +39,7 @@ public class SpotifyHandler {
 	}
 	
 	public String requestPlayList(String query) {
-		String JSON = "";/////////////////////shitty verson of send query
+		String JSON = "";/////////////////////shitty verson of send query need to be refined for address search
 		String command1 = "python3 getList.py \""+query+"\" "+this.access_token;
 		String line;
 		Process p;
@@ -53,3 +60,4 @@ public class SpotifyHandler {
 	
 	
 	
+}
