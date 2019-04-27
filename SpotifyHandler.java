@@ -1,10 +1,10 @@
+package moodplay;
 
 import java.net.*;
 import java.io.*;
 import java.util.*;
 
 import javax.net.ssl.HttpsURLConnection;
-
 
 public class SpotifyHandler {
 	private long token_timeout = 0;
@@ -39,7 +39,7 @@ public class SpotifyHandler {
 	}
 	
 	public String requestPlayList(String query) {
-		String JSON = "";/////////////////////shitty verson of send query need to be refined for address search
+		String JSON = "";/////////////////////shitty verson of send query
 		String command1 = "python3 getList.py \""+query+"\" "+this.access_token;
 		String line;
 		Process p;
@@ -48,7 +48,10 @@ public class SpotifyHandler {
 	        p.waitFor();
 	        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 	        while ((line = input.readLine()) != null) {
-	          JSON += line;
+		        System.out.println(line);
+	        	if(line.matches("(.*)url(.*)")||line.matches("(.*)href(.*)")||line.matches("(.*)id(.*)")||line.matches("(.*)name(.*)")||line.matches("(.*)display_name(.*)")||line.matches("(.*)total(.*)"))
+		        JSON += line+"\n";
+	        	System.out.println(JSON);
 	        }
 	        input.close();
 	    } catch (Exception e) {
@@ -58,6 +61,25 @@ public class SpotifyHandler {
 		return JSON;
 	}
 	
-	
+	public String requestPLContent(String link) {
+		String JSON = "";
+		String command1 = "python3 getListCont.py \""+link+"\" "+this.access_token;
+		String line;
+		Process p;
+		try {
+	        p = Runtime.getRuntime().exec(command1);
+	        p.waitFor();
+	        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+	        while ((line = input.readLine()) != null) {
+	        	System.out.println(JSON);
+	            JSON += line +"\n";
+	        }
+	        input.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+		
+		return JSON;
+	}
 	
 }
