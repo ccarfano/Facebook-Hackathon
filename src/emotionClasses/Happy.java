@@ -1,3 +1,5 @@
+package emotionClasses;
+
 import java.util.List;
 
 public class Happy extends Emotion

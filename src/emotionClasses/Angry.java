@@ -1,3 +1,5 @@
+package emotionClasses;
+
 import java.util.List;
 
 public class Angry extends Emotion
