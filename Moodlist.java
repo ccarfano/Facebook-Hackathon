@@ -22,5 +22,12 @@ public class Moodlist{
       }
 
   }
+  
+   public static Integer moodcount(ArrayList<String> convo, ArrayList<String> mood ){
+    convo.retainAll(mood);
+    System.out.println(convo.size());
+    return convo.size();
+
+  }
 
 }
