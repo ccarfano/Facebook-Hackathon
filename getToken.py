@@ -7,4 +7,3 @@ gettoken = "curl -X \"POST\" -H \"Authorization: Basic MjVkYjBmNWY2M2UwNDQ2ZmExN
 token = os.system(gettoken)
 
 print(token)
-	
