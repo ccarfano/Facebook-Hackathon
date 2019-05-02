@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: black;
+}
+
+#rectangle {
+	width: 250px;
+	height: 400px;
+	margin:auto;
+}
+
+#text_input {
+	position: relative;
+	margin: auto;
+	left: 80px;
+	top: 110px;
+	font-size: 14px;
+	color: white;
+}
+
+#upper {
+  position: absolute;
+  clip: rect(20px,800px,45px,230px);
+}
+
+#text {
+	position: relative;
+	left: 55px;
+	top: 180px;
+}
+
+#lower {
+	position: absolute;
+	top: 70px;
+	clip: rect(310px,800px,350px,0px);
+}
+
+#div_upper {
+  position: relative;
+  bottom: 100px;
+  right: 50px;
+  
+}
+
+#d1 {
+	margin: auto;
+	width: 250px;
+	position: relative;
+	left: 0px;
+	top: 345px;
+}
+
+#username {
+	position: relative;
+	bottom: 55px;
+	left:70px;
+	
+}
+#avatar {
+	bottom: 20px;
+	left:0px;
+	position: relative;
+}
+
+h2 {
+	color: #97FFFF;
+	font-weight: italic;
+	font-size: 26px;
+	animation-name: bounceInRight;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+	font-family: "arial";
+	text-shadow: 3px 3px #002AAD;
+}
