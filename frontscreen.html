@@ -1,0 +1,52 @@
+<! DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset = "utf-8">
+<link rel="stylesheet" type= "text/css" href="messenger.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="animate.css">
+</head>
+<body>
+	<div id="rectangle" style="background-color:white">
+	<div id="d1"><input id="1" style="width:250px" name="message1" type="text" placeholder="Type a messeage, @name..."></div>
+	
+    <img id="avatar" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909__340.png" alt="Avatar" width="50" height="50">
+	<div id="username"><strong style="font-family:Arial">User Name</strong></div>
+	<div id="div_upper">
+	<img id="upper" src="https://i2-prod.mirror.co.uk/incoming/article6720661.ece/ALTERNATES/s615b/Woman-sells-sofa-on-facebook-with-hilarious-results.jpg" alt="upper" width="300" height = "500">
+	</div>
+	<img id="lower" src="https://i2-prod.mirror.co.uk/incoming/article6720661.ece/ALTERNATES/s615b/Woman-sells-sofa-on-facebook-with-hilarious-results.jpg" alt="upper" width="250px" height = "335">
+	
+	<img id="text" src="https://i1.wp.com/taridium.com/wp-content/uploads/2017/06/speech-bubble.png" width="210px">
+	<div id="text_input"><p style="font-family:Arial"></p></div>
+	</div>
+
+	<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="messenger.js">
+	$(document).ready(function() 
+{
+	$('#text').hide();
+	$('#text_input').hide();
+
+	$('#1').dblclick(function()
+	{
+		var inputAns = $("input[name=message1]").val();
+		//if (inputAns != null)
+		{
+			$('#text').show();
+			$('#text_input').delay(100);
+			$("#text_input").fadeIn();
+			$('#text_input').append(function () {
+				$('#text_input').text(inputAns);
+			});
+			$('#text_input').show();
+		}
+	});
+});	
+	
+	</script>
+</body>
+</html>
